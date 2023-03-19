@@ -1,0 +1,26 @@
+package com.safari.product;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+
+public class ProductController {
+
+	
+	@Autowired
+	private OrderRepo repo;
+	
+	@PostMapping("/save")
+	public Order save(@RequestBody  order) {
+		return repo.save(order);
+	}
+
+}
+
+@Repository
+ interface OrderRepo extends JpaRepository<Order, Integer>{
+	
+}

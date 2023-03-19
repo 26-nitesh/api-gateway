@@ -1,0 +1,5 @@
+package com.safari.order.entity;
+
+public class OrderController {
+
+}

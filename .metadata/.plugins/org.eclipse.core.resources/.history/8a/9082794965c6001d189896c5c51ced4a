@@ -1,0 +1,5 @@
+package com.safari.order.repo;
+
+public interface OrderRepository {
+
+}

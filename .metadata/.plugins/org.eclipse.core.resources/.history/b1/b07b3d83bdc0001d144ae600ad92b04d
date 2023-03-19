@@ -1,0 +1,10 @@
+package com.safari.product.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "Product_TB")
+public class Product {
+
+}

@@ -1,0 +1,9 @@
+package com.safari.order.commons;
+
+import com.safari.order.entity.Order;
+
+public class TransactionResquest {
+
+	private Order order;
+	private Payment payment;
+}

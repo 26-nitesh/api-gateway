@@ -1,0 +1,5 @@
+package com.safari.order.service;
+
+public class PaymentService {
+
+}

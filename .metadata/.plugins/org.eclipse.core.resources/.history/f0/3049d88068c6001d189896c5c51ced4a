@@ -1,0 +1,23 @@
+package com.safari.order.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.safari.order.commons.TransactionResquest;
+import com.safari.order.entity.Order;
+import com.safari.order.repo.OrderRepository;
+
+@Service
+public class OrderService {
+
+	@Autowired
+	private OrderRepository ;
+
+
+	public Order process(TransactionResquest resquest) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+}

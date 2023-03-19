@@ -1,0 +1,45 @@
+package com.safari.payment.controller;
+
+import java.util.Random;
+import java.util.UUID;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.safari.payment.entity.Payment;
+import com.safari.payment.repo.PaymentRepo;
+
+@RestController
+@ResponseBody
+@RequestMapping("/payment")
+public class PaymentController {
+
+	
+	@Autowired
+	private PaymentRepo repo;
+	
+	@GetMapping("/")
+	public String see() {
+		return "payment";
+	}
+	
+	@PostMapping("/save")
+	public Payment save(@RequestBody Payment payment) {
+		payment.setPaymentStatus("sucess");
+		payment.setTrxnId(UUID.randomUUID().toString());
+		return repo.save(payment);
+	}
+	
+	String processPayment(){
+		return new Random().nextBoolean()?"sucess":"fail";
+	}
+
+}
+
